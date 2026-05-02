@@ -1,0 +1,554 @@
+[
+  {
+    "name": "Эритроциты (RBC)",
+    "aliases": [],
+    "optimal_min": 3.7,
+    "optimal_max": 4.7,
+    "unit": "10^12/л",
+    "note": null
+  },
+  {
+    "name": "Гемоглобин (HGB)",
+    "aliases": [],
+    "optimal_min": 120,
+    "optimal_max": 140,
+    "unit": "г/л",
+    "note": null
+  },
+  {
+    "name": "Средний объем эритроцитов (MCV)",
+    "aliases": [],
+    "optimal_min": 87,
+    "optimal_max": 87,
+    "unit": "фл",
+    "note": "+-5"
+  },
+  {
+    "name": "Среднее содержание гемоглобина в эритроците (MCH)",
+    "aliases": [],
+    "optimal_min": 27,
+    "optimal_max": 34,
+    "unit": "пг",
+    "note": null
+  },
+  {
+    "name": "Средняя концентрация корпускулярного гемоглобина в эритроците (MCHC)",
+    "aliases": [],
+    "optimal_min": 32,
+    "optimal_max": 37,
+    "unit": "г/л",
+    "note": null
+  },
+  {
+    "name": "Распределение эритроцитов по величине и объему (RDW)",
+    "aliases": [],
+    "optimal_min": 11.6,
+    "optimal_max": 14.8,
+    "unit": "%",
+    "note": null
+  },
+  {
+    "name": "Гематокрит (HTC)",
+    "aliases": [],
+    "optimal_min": 34,
+    "optimal_max": 45,
+    "unit": "%",
+    "note": null
+  },
+  {
+    "name": "Тромбоциты (PLT)",
+    "aliases": [],
+    "optimal_min": 180,
+    "optimal_max": 350,
+    "unit": "10^9/л",
+    "note": null
+  },
+  {
+    "name": "Лейкоциты (WBC)",
+    "aliases": [],
+    "optimal_min": 4.5,
+    "optimal_max": 9,
+    "unit": "10^9/л",
+    "note": null
+  },
+  {
+    "name": "Нейтрофилы (NEUT)",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": 60,
+    "unit": "%",
+    "note": null
+  },
+  {
+    "name": "Лимфоциты (LYM)",
+    "aliases": [],
+    "optimal_min": 23,
+    "optimal_max": 37,
+    "unit": "%",
+    "note": null
+  },
+  {
+    "name": "Моноциты (MON)",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": 9,
+    "unit": "%",
+    "note": null
+  },
+  {
+    "name": "Эозинофилы (EOS)",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": 3,
+    "unit": "%",
+    "note": null
+  },
+  {
+    "name": "Базофилы (BAS)",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": 1,
+    "unit": "%",
+    "note": null
+  },
+  {
+    "name": "СОЭ",
+    "aliases": [],
+    "optimal_min": 2,
+    "optimal_max": 10,
+    "unit": "мм/ч",
+    "note": null
+  },
+  {
+    "name": "Общий белок",
+    "aliases": [],
+    "optimal_min": 72,
+    "optimal_max": 78,
+    "unit": "г/л",
+    "note": null
+  },
+  {
+    "name": "C-реактивный белок",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": 1,
+    "unit": "мг/л",
+    "note": null
+  },
+  {
+    "name": "Трансферин",
+    "aliases": [],
+    "optimal_min": 3.5,
+    "optimal_max": 4,
+    "unit": "г/л",
+    "note": null
+  },
+  {
+    "name": "Фруктозамин",
+    "aliases": [],
+    "optimal_min": 230,
+    "optimal_max": 250,
+    "unit": "мкмоль/л",
+    "note": null
+  },
+  {
+    "name": "Креатинин",
+    "aliases": [],
+    "optimal_min": 75,
+    "optimal_max": 100,
+    "unit": "мкмоль/л",
+    "note": null
+  },
+  {
+    "name": "Мочевая кислота",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": 300,
+    "unit": "мкмоль/л",
+    "note": null
+  },
+  {
+    "name": "Мочевина",
+    "aliases": [],
+    "optimal_min": 3.8,
+    "optimal_max": 5.5,
+    "unit": "ммоль/л",
+    "note": null
+  },
+  {
+    "name": "Ферритин",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "середина или чуть выше"
+  },
+  {
+    "name": "Общий билирубин",
+    "aliases": [],
+    "optimal_min": 10,
+    "optimal_max": 15,
+    "unit": "мкмоль/л",
+    "note": null
+  },
+  {
+    "name": "Альбумин",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "к верху"
+  },
+  {
+    "name": "Щелочная фосфатаза",
+    "aliases": [],
+    "optimal_min": 80,
+    "optimal_max": 120,
+    "unit": "Е/л",
+    "note": null
+  },
+  {
+    "name": "ГГТ",
+    "aliases": [],
+    "optimal_min": 20,
+    "optimal_max": 40,
+    "unit": "Е/л",
+    "note": null
+  },
+  {
+    "name": "Альфа-амилаза",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "середина"
+  },
+  {
+    "name": "Липаза",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "к верху"
+  },
+  {
+    "name": "Общий холестерин",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "середина"
+  },
+  {
+    "name": "ЛПНП",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "середина"
+  },
+  {
+    "name": "ЛПВП",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "верх"
+  },
+  {
+    "name": "Коэффициент атерогенности",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": 2,
+    "unit": null,
+    "note": null
+  },
+  {
+    "name": "Триглицериды",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": 1,
+    "unit": null,
+    "note": "до середины"
+  },
+  {
+    "name": "Гомоцистеин",
+    "aliases": [],
+    "optimal_min": 5.5,
+    "optimal_max": 7,
+    "unit": "мкмоль/л",
+    "note": null
+  },
+  {
+    "name": "Глюкоза",
+    "aliases": [],
+    "optimal_min": 4.5,
+    "optimal_max": 5,
+    "unit": "ммоль/л",
+    "note": null
+  },
+  {
+    "name": "Гликированный гемоглобин",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": 5.2,
+    "unit": "%",
+    "note": null
+  },
+  {
+    "name": "Инсулин",
+    "aliases": [],
+    "optimal_min": 4,
+    "optimal_max": 7,
+    "unit": "мЕ/л",
+    "note": null
+  },
+  {
+    "name": "С-пептид",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": 2.5,
+    "unit": "нг/мл",
+    "note": null
+  },
+  {
+    "name": "Индекс Хома",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": null
+  },
+  {
+    "name": "Витамин А",
+    "aliases": [],
+    "optimal_min": 60,
+    "optimal_max": null,
+    "unit": "мкг/л",
+    "note": null
+  },
+  {
+    "name": "Витамин Е",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "к верху"
+  },
+  {
+    "name": "Витамин K",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": null
+  },
+  {
+    "name": "Витамин B12",
+    "aliases": [],
+    "optimal_min": 500,
+    "optimal_max": 600,
+    "unit": "пг/л",
+    "note": null
+  },
+  {
+    "name": "Витамин B9",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "к верху"
+  },
+  {
+    "name": "Витамин B6",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "к верху"
+  },
+  {
+    "name": "Витамин C",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": null
+  },
+  {
+    "name": "Магний",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "к верху"
+  },
+  {
+    "name": "Кальций",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": null
+  },
+  {
+    "name": "Медь",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "к верху"
+  },
+  {
+    "name": "Цинк",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "к верху"
+  },
+  {
+    "name": "Хром",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": null
+  },
+  {
+    "name": "Селен",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "к верху"
+  },
+  {
+    "name": "Марганец",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": null
+  },
+  {
+    "name": "ТТГ",
+    "aliases": [],
+    "optimal_min": 1.5,
+    "optimal_max": 2.5,
+    "unit": "мЕ/л",
+    "note": null
+  },
+  {
+    "name": "Т3 св",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "середина"
+  },
+  {
+    "name": "Т4 св",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "ближе к верху"
+  },
+  {
+    "name": "АТ ТПО",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "идеал 0 или середина"
+  },
+  {
+    "name": "АТ ТГ",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "идеал 0 или до середины"
+  },
+  {
+    "name": "Йод",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "середина"
+  },
+  {
+    "name": "ФСГ",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": null
+  },
+  {
+    "name": "ЛГ",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": null
+  },
+  {
+    "name": "ГСПГ",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": null
+  },
+  {
+    "name": "Прогестерон",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": null
+  },
+  {
+    "name": "Пролактин",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": "середина референса"
+  },
+  {
+    "name": "Тестостерон",
+    "aliases": [],
+    "optimal_min": 1,
+    "optimal_max": 1.2,
+    "unit": "нг/мл",
+    "note": null
+  },
+  {
+    "name": "ДГТ",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": null
+  },
+  {
+    "name": "ДГЭА СУЛЬФАТ",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": null
+  },
+  {
+    "name": "ЭСТРОДИОЛ",
+    "aliases": [],
+    "optimal_min": null,
+    "optimal_max": null,
+    "unit": null,
+    "note": null
+  }
+]

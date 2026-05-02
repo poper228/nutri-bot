@@ -48,3 +48,5 @@ data/raw/
 data/uploads/
 *.sqlite
 *.db
+lections/
+/analysis/

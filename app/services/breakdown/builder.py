@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from app.infrastructure.llm.base import LLMProvider
+from app.services.analysis.optimal_checker import apply_optimal_ranges
 from app.services.analysis.parser import AnalysisParser
 from app.services.analysis.schemas import LabIndicator, ParsedAnalysis
 from app.services.lectures.retriever import LectureRetriever, RetrievalResult
@@ -41,20 +42,20 @@ class BreakdownBuilder:
         self._llm = llm
         self._rag_top_k = rag_top_k
 
+    async def build_from_bytes(self, data: bytes, mime_type: str) -> BreakdownResult:
+        analysis = await self._parser.parse_bytes(data, mime_type)
+        return await self._build(analysis)
+
     async def build(self, analysis_path: Path) -> BreakdownResult:
-        # 1. Parse analysis
         analysis = await self._parser.parse_file(analysis_path)
+        return await self._build(analysis)
 
-        # 2. Find abnormal indicators
+    async def _build(self, analysis: ParsedAnalysis) -> BreakdownResult:
+        analysis = apply_optimal_ranges(analysis)
         abnormal = [i for i in analysis.indicators if i.status in ("low", "high")]
-
-        # 3. RAG: query per abnormal indicator, collect unique chunks
         rag_chunks = await self._retrieve_context(abnormal)
-
-        # 4. Build prompt and generate
         user_message = self._build_user_message(analysis, abnormal, rag_chunks)
         text = await self._llm.generate_breakdown(_SYSTEM_PROMPT, user_message)
-
         return BreakdownResult(analysis=analysis, rag_chunks=rag_chunks, text=text)
 
     async def _retrieve_context(self, abnormal: list[LabIndicator]) -> list[RetrievalResult]:

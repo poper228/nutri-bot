@@ -1,11 +1,12 @@
 from pathlib import Path
 
+import io
+
 import pdfplumber
 
 from app.infrastructure.llm.base import LLMProvider
 from app.services.analysis.schemas import ParsedAnalysis
 
-_IMAGE_MIMES = {"image/jpeg", "image/png", "image/webp", "image/gif"}
 _EXT_TO_MIME = {
     ".jpg": "image/jpeg",
     ".jpeg": "image/jpeg",
@@ -14,9 +15,10 @@ _EXT_TO_MIME = {
 }
 
 
-def _extract_pdf_text(path: Path) -> str:
+def _extract_pdf_text(source: Path | bytes) -> str:
+    opener = pdfplumber.open(source if isinstance(source, Path) else io.BytesIO(source))
     pages = []
-    with pdfplumber.open(path) as pdf:
+    with opener as pdf:
         for page in pdf.pages:
             text = page.extract_text()
             if text:
@@ -45,5 +47,11 @@ class AnalysisParser:
         return ParsedAnalysis.model_validate(raw)
 
     async def parse_bytes(self, data: bytes, mime_type: str) -> ParsedAnalysis:
-        raw = await self._llm.parse_analysis(data, mime_type)
+        if mime_type == "application/pdf":
+            text = _extract_pdf_text(data)
+            if not text.strip():
+                raise ValueError("PDF contains no extractable text (scanned image?)")
+            raw = await self._llm.parse_analysis(text.encode(), "text/plain")
+        else:
+            raw = await self._llm.parse_analysis(data, mime_type)
         return ParsedAnalysis.model_validate(raw)
