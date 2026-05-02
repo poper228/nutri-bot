@@ -1,10 +1,11 @@
+import asyncio
 import json
 
 from groq import Groq
 
 from app.infrastructure.llm.base import LLMProvider
 
-_PROMPT = """\
+_PARSE_PROMPT = """\
 Ты — медицинский ассистент-аналитик.
 Извлеки ВСЕ лабораторные показатели из текста анализа.
 
@@ -34,15 +35,27 @@ class GroqProvider(LLMProvider):
         self._model = model
 
     async def parse_analysis(self, file_bytes: bytes, mime_type: str) -> dict:
-        # Groq is text-only — decode bytes as UTF-8 text (works for text-extracted PDFs)
         text = file_bytes.decode("utf-8", errors="replace")
-        response = self._client.chat.completions.create(
+        response = await asyncio.to_thread(
+            self._client.chat.completions.create,
             model=self._model,
             messages=[
-                {"role": "system", "content": _PROMPT},
+                {"role": "system", "content": _PARSE_PROMPT},
                 {"role": "user", "content": text},
             ],
             response_format={"type": "json_object"},
             temperature=0.0,
         )
         return json.loads(response.choices[0].message.content)
+
+    async def generate_breakdown(self, system_prompt: str, user_message: str) -> str:
+        response = await asyncio.to_thread(
+            self._client.chat.completions.create,
+            model=self._model,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_message},
+            ],
+            temperature=0.7,
+        )
+        return response.choices[0].message.content
