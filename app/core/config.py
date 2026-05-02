@@ -35,10 +35,14 @@ class Settings(BaseSettings):
     qdrant_host: str = Field(default="localhost", alias="QDRANT_HOST")
     qdrant_http_port: int = Field(default=6333, alias="QDRANT_HTTP_PORT")
     qdrant_grpc_port: int = Field(default=6334, alias="QDRANT_GRPC_PORT")
+    qdrant_lectures_collection: str = Field(
+        default="lecture_chunks_v1", alias="QDRANT_LECTURES_COLLECTION"
+    )
 
     embedding_model: str = Field(
         default="intfloat/multilingual-e5-large", alias="EMBEDDING_MODEL"
     )
+    embedding_dimension: int = Field(default=1024, alias="EMBEDDING_DIMENSION")
 
     log_level: LogLevel = Field(default="INFO", alias="LOG_LEVEL")
 
